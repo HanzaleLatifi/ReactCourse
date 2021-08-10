@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import ClassCounter from './Components/ClassCounter/ClassCounter';
-import ClassTimer from './Components/ClassTimer/ClassTimer';
-import FunctionalCounter from './Components/FunctionalCounter/FunctionalCouner';
-import FunctionalTimer from './Components/FunctionalTimer/FunctionalTimer';
+import ClickCounter from './Components/ClickCounter/ClickCounter';
+import HoverCounter from './Components/HoverCounter/HoverCounter';
+
 
 
 class App extends Component {
-    //forTimer
-    state = {
-        isShow: false,
-    }
+
+
 
     render() {
 
         return (
             <>
-                {/* forTimer */}
-                <button onClick={() => this.setState({ isShow: !this.state.isShow })} >{this.state.isShow ? 'hide' : 'show'}</button>
-                {this.state.isShow && <ClassTimer />}
-                {this.state.isShow && <FunctionalTimer />}
-                {/* <ClassCounter /> */}
-                {/* <FunctionalCounter /> */}
+                click:<ClickCounter name="name" />
+                hover<HoverCounter />
+
             </>
 
         );
