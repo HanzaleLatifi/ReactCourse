@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ParentComp from './Components/PureMemoComp/ParentComp';
+import ClassRef from './Components/Ref/ClassRef';
+import FunctionalRef from './Components/Ref/FunctionalRef';
 
 
 
@@ -12,7 +13,12 @@ class App extends Component {
 
         return (
 
-            <ParentComp />
+            <div>
+                class--- <ClassRef />
+                {/* Func -----<FunctionalRef /> */}
+
+
+            </div>
 
 
         );
