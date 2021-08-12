@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-export const CounterContext = React.createContext(); //state
-export const CounterContextDispatcher = React.createContext(); //setState
+
+const CounterContext = React.createContext(); //state
+const CounterContextDispatcher = React.createContext(); //setState
 
 const CounterProvider = ({ children }) => {
 
@@ -21,3 +22,7 @@ const CounterProvider = ({ children }) => {
 }
 
 export default CounterProvider;
+//custom Hooks
+export const useCount = () => useContext(CounterContext);
+export const useCountActions = () => useContext(CounterContextDispatcher);
+
