@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react';
 
-const initialState = { firstCount: 0, secondCount: 5 };
+const initialState = 0;
+const initialStateSecond = 10;
 const reducer = (state, action) => {
     switch (action.type) {
-        case "addFirst": return { ...state, firstCount: state.firstCount + action.value };
-        case "addSecond": return { ...state, secondCount: state.secondCount + action.value };
+        case "add": return state + action.value;
         case "reset": return initialState;
         default: return state;
 
@@ -14,21 +14,27 @@ const reducer = (state, action) => {
 
 const ReducerCounter = () => {
     const [count, dispatch] = useReducer(reducer, initialState);
+    const [countSecond, dispatchSecond] = useReducer(reducer, initialStateSecond);
+
+
 
     return (
         <div>
             <div>
-                First-count is :{count.firstCount}
-                <button onClick={() => dispatch({ type: "addFirst", value: 1 })}>add one</button>
-                <button onClick={() => dispatch({ type: "addFirst", value: 5 })}>add five</button>
+                First-count is :{count}
+                <button onClick={() => dispatch({ type: "add", value: 1 })}>add one</button>
+                <button onClick={() => dispatch({ type: "add", value: 5 })}>add five</button>
+                <button onClick={() => dispatch({ type: "reset" })}>add reset</button>
+
             </div>
 
-            <button onClick={() => dispatch({ type: "reset" })}>add reset</button>
 
             <div>
-                second-count is :{count.secondCount}
-                <button onClick={() => dispatch({ type: "addSecond", value: 1 })}>add one</button>
-                <button onClick={() => dispatch({ type: "addSecond", value: 5 })}>add five</button>
+                second-count is :{countSecond}
+                <button onClick={() => dispatchSecond({ type: "add", value: 1 })}>add one</button>
+                <button onClick={() => dispatchSecond({ type: "add", value: 5 })}>add five</button>
+                <button onClick={() => dispatchSecond({ type: "reset" })}>add reset</button>
+
             </div>
 
 
