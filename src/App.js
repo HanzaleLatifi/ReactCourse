@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CounterOne from './Components/Context/CounterOne';
 import CounterProvider from './Components/Context/CounterProvider';
+import Counter from './Components/ContextVsReduser/Counter';
+import CounterProviderr from './Components/ContextVsReduser/CounterProviderr';
 import ReducerCounter from './Components/Reducer/ReduserCounter';
 import ClassRef from './Components/Ref/ClassRef';
 import FunctionalRef from './Components/Ref/FunctionalRef';
@@ -25,7 +27,10 @@ class App extends Component {
                     <p>wellcome to context</p>
                     <CounterOne />
                 </CounterProvider> */}
-                <ReducerCounter />
+                {/* <ReducerCounter /> */}
+                <CounterProviderr>
+                    <Counter />
+                </CounterProviderr>
 
 
             </div>
